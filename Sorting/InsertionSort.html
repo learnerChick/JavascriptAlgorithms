@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Insertion sort</title>
+</head>
+<body>
+	<script>
+/**
+ * 1) First place marker on first item.
+ * 2) This divides list into two parts, sorted and unsorted list.
+ * 3) Repeatedly compare the marker with numbers in sorted section.
+ * 4) If find a lower number, swap.
+ * 5) Move marker to the right.
+ *
+ *
+ * Insertion sort is good for lists that are almost sorted because/
+ * At best case, it makes N-1 compares and 0 exchanges. 0(N)
+ * Worst case (N^2 compares and N^2) exchanges 0(N^2)
+ * It's a stable sort.  Constant space is requires  0(1)
+ */
+
+ var items = [];
+
+ function sort(){
+ 	for(var i = 0; i < items.length; i++){
+ 		for(var j = i; j > 0; j--){
+ 			if(items[j] < items[j-1]){
+ 				swap(j, j-1);
+ 			}
+ 		}
+ 	}
+ }
+
+
+ function swap(i, j){
+ 	var temp = items[i];
+ 	items[i] = items[j];
+ 	items[j] = temp;
+ }
+
+ function start(){
+ 	items = [77,99,44,55,22,88,11,00,66,33];
+ 	sort();
+ 	console.log(items.join(","));
+ }
+
+ start();
+ </script
+</body>
+</html>

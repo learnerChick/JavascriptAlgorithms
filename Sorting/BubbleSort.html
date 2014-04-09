@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Bubble sort</title>
+</head>
+<body>
+	<script>
+/**
+ *  Bubble sort - compare each item with the item next to it and swap is left is larger than right.  Continue to the end
+ *  of the list and then reloop again.
+ *
+ *  Runs in 0(N^2)
+ *  1) Start at the end of the array for the outer loop.
+ *  2) Have another loop that starts from beginning to end of outer loop
+ *  3) Now, in the inner loop, take each item and compare it to the item next to it.  If item on left is larger than right, swap.
+ *  4) These swapping motions will move the bigger item to the right one by one..
+ *
+ */
+
+ var items = [];
+
+ function sort(){
+ 	for(var i = items.length - 1; i > 0; i--){
+ 		for(var j = 0; j < i; j++){
+ 			if(items[j] > items[j + 1]){
+ 				swap(j, j + 1);
+ 			}
+ 		}
+ 	}
+ }
+
+
+ function swap(i, j){
+ 	var temp = items[i];
+ 	items[i] = items[j];
+ 	items[j] = temp;
+ }
+
+ function start(){
+ 	items = [77,99,44,55,22,88,11,00,66,33];
+ 	sort();
+ 	console.log(items.join(","));
+ }
+
+ start();
+ </script
+</body>
+</html>

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Selection sort</title>
+</head>
+<body>
+	<script>
+/**
+ * Different from bubble sort because the sorted element(smallest) will end up being placed on the left first.  It is
+ * more efficient than bubble sort because although there are n^2 comparisons, the swaps are O(N).
+ *
+ * Selection sort is called selection sort because you look at each item one by one, compare its value and then finally choose the smallest to swap
+ * it with.
+ *
+ * 1) Start from the left for the outer loop.  End the loop at < length - 1.
+ * 2) Set the min to the position of the outer loop's marker.
+ * 3) Start the inner loop at outerloop + 1.  End at  < length.
+ * 4) Compare inner loop with min.  If inner loop item is less than min, then replace min marker with inner loop marker.
+ * 5) At the close of inner loop, swap the min with the current outer loop's index.  Continue.
+*/
+
+var items = [];
+
+function sort(){
+	for(var i = 0; i < items.length - 1; i++){
+		var min = i;
+		for(var j = i + 1; j < items.length; j++){
+			if(items[j] < items[min]){
+				min = j;
+			}
+		}
+		swap(i, min);
+	}
+}
+
+
+function swap(i, j){
+	var temp = items[i];
+	items[i] = items[j];
+	items[j] = temp;
+}
+
+function start(){
+	items = [77,99,44,55,22,88,11,00,66,33];
+	sort();
+	console.log(items.join(","));
+}
+
+start();
+</script
+</body>
+</html>
