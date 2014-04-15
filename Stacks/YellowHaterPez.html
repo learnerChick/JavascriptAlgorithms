@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Yellow Hater Pez</title>
+</head>
+<body>
+	<script src="Stack.js"></script>
+	<script src="YellowHaterPez.js"></script>
+	<script>
+		var s = new Stack();
+		s.push("Y");
+		s.push("Y");
+		s.push("R");
+		s.push("G");
+		s.push("Y");
+		s.push("R");
+		s.push("G");
+		s.push("G");
+		s.push("Y");
+		s.push("Y");
+
+		var yellowRemoved = yellowHaterPez(s);
+		console.log(yellowRemoved.items.toString());
+
+	</script>
+</body>
+</html>
