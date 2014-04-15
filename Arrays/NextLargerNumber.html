@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Next larger number</title>
+</head>
+<body>
+	<script>
+/**
+ *  Given a number whose digits are unique, find the next larger number that can be formed with those digits.
+ *  Algorithm:
+ *      1) Start from the end.
+ *      2) Compare digit on left with right.  If left is larger than right, move on.
+ *      3) If left is smaller than right, this will be the first pivot point.
+ *      4) Divide the numbers into 2 chunks.  One from index 0 to right before pivot.  The other from pivot to end.
+ *      5) Sort second chunk into order.  Find the smallest number larger than the pivot.
+ *      6) Keep track of that number (pivot replacer).  It will be inserted into final next largest number.
+ *      7) Join chunk one, pivot replacer and chunk two (without pivot replacer)
+ *      Algorithm below runs at 0(N^2).
+ */
+
+ 
+
+function findNextLargerNumber(number){
+	number = number.toString().split("");
+	var newNumber = [];
+
+	for(var i = number.length - 1; i > 0; i--){
+		var left = number[i-1];
+		var right = number[i];
+
+		if(left < right){
+			var pivot = i;
+			var pivotValue = number[i];
+
+			var leftPart = number.slice(0, i);
+			var rightPart = number.slice(i, number.length);
+			var replacer;
+
+			rightPart.sort();
+
+			for(var j = 0; j < rightPart.length; j++){
+				if(rightPart[j] > pivotValue){
+					replacer = rightPart[j];
+					break;
+				}
+			}
+
+			newNumber = newNumber.concat(leftPart)
+				.concat(replacer);
+
+			for(var j = 0; j < rightPart.length; j++){
+				if(rightPart[j] !== replacer){
+					newNumber.push(rightPart[j])
+				}
+			}
+		}
+	}
+	console.log(newNumber.join(""));
+}
+
+function start(){
+	findNextLargerNumber(1234); //1243
+	findNextLargerNumber(12543); //13245
+	findNextLargerNumber(38276); //38627
+	findNextLargerNumber(7865); //8567
+}
+
+start();
+ </script>
+</body>
+</html>
