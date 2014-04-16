@@ -25,6 +25,8 @@ Stack.prototype.peek = function(){
 	if(!this.isEmpty()){
 		return this.items[this.count - 1];
 	}
+
+	return null;
 }
 
 Stack.prototype.isEmpty = function(){
