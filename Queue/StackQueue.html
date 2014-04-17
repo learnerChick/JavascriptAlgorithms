@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Stack Queue</title>
+</head>
+<body>
+	<script src="../Stacks/Stack.js"></script>
+	<script src="StackQueue.js"></script>
+	<script>
+		var queue = new StackQueue();
+		queue.enqueue(1);
+		queue.enqueue(2);
+		queue.enqueue(3);
+		queue.enqueue(5);
+		queue.enqueue(6);
+
+		console.log(queue.dequeue());
+		console.log(queue.dequeue());
+		console.log(queue.dequeue());
+
+
+	</script>
+</body>
+</html>
