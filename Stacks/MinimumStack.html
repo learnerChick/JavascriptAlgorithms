@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Minimum Number</title>
+</head>
+<body>
+    <script src="Stack.js"></script>
+    <script src="MinimumStack.js"></script>
+    <script>
+        var minStack = new MinimumStack();
+        minStack.push(2);
+        minStack.push(5);
+        minStack.push(6);
+        minStack.push(1);
+        minStack.push(7);
+        minStack.push(13);
+        minStack.push(0);
+        minStack.push(-5);
+        minStack.push(29);
+
+        console.log(minStack.getMinimum());
+
+        minStack.pop();
+        console.log(minStack.getMinimum());
+    </script>
+</body>
+</html>
