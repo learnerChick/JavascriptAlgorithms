@@ -1,8 +1,8 @@
 /**
  * Write a function to find the min and max in an array with minimum comparisons.
  * Solution: Compare in pairs
- * If n is odd, then initialize min and max = arr[0]. Counter (index pos for array) begins at 1 here.
- * If n is even, the initialize min = arr[0] and max = arr[1].  Counter begins at 2 here.
+ * If n is odd, then initialize min and max = arr[0]. 
+ * If n is even, the initialize min = arr[0] and max = arr[1].
  * Then, start going through each element and compare min and max
  * Time complexity: 0(n)
  * Comparisons: We're doing 3 comparisons every time, and since we're going down the route of 2 numbers each time, divide that by half.
@@ -15,15 +15,13 @@ function minMaxArray(arr){
 	if(arr.length % 2 === 0){
 		min = arr[0];
 		max = arr[1];
-		begin = 1;
 	}
 	else{
 		min = arr[0];
 		max = arr[0];
-		begin = 2;
 	}
 
-	for(var i = begin; i < arr.length; i=i+2){
+	for(var i = 1; i < arr.length; i=i+2){
 		//here, we check if the left item is larger than the right, if it is, we then check the larger item with max and the smaller one with min.
 		if(arr[i] > arr[i+1]){
 			if(arr[i+1] < min){
