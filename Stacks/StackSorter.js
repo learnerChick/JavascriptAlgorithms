@@ -1,4 +1,13 @@
+/*
+    The stack is ordered smaller items in the bottom, larger item on top.
 
+    1) Recursively pop the stack until empty.
+    2) Then, try to put the popped number with another recursive function called insertSorted.
+    3) In insertion part, if stack is empty, just push the number into the stack and return.
+    4) If not empty, compare the top of stack with number. If number is less than peek(),
+       then pop the stack and try calling the insert method again.  Finally push the top back.
+       If number is greater than peek(), then push the number into the stack.
+*/
 function StackSorter(stack){
     this.stack = stack;
 }
