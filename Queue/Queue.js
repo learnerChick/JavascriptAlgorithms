@@ -5,10 +5,17 @@ function Queue(){
 
 Queue.prototype.enqueue = function(item){
 	this.items.push(item);
+	this.count++;
 }
 
 Queue.prototype.dequeue = function(){
-	return this.items.shift();
+	if(this.count > 0){
+		this.count--;
+		return this.items.shift();
+	}
+	else{
+		return null;
+	}
 }
 
 Queue.prototype.isEmpty = function(){
@@ -23,6 +30,6 @@ Queue.prototype.back = function(){
 	return this.items[this.count - 1];
 }
 
-Queue.prototype.toString(){
+Queue.prototype.toString = function(){
 	return this.items.join(",");
 }

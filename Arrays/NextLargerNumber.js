@@ -36,8 +36,9 @@ function findNextLargerNumber(number){
 			var part2 = number.slice(i-1, number.length);
 
 			//5) Sort second chunk into order. 
-			part2 = Array.sort(part2);
-			
+			//part2 = Array.sort(part2);
+			part2 = part2.sort(function(a,b){return a-b});
+
 			//6) Find the smallest number larger than the pivot.
 			for(var j = 0; j < part2.length; j++){
 				if(part2[j] > pivot && !replacerNotFound){
