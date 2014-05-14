@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Linked List</title>
+</head>
+<body>
+	<script src="LinkedList.js"></script>
+	<script>
+		var list = new LinkedList();
+		list.insertFirst("one");
+		list.insertFirst("two");
+		list.insertFirst("three");
+		list.insertFirst("four");
+		list.insertFirst("five");
+		list.insertFirst("six");
+
+		console.info("Display");
+		list.display();
+
+		console.info("Find");
+		console.log(list.find("two"));
+		console.log(list.find("five"));
+
+		console.info("Delete");
+		console.log(list.delete("three"));
+		console.info("Display");
+		list.display();
+
+		console.info("Insert after");
+		list.insertAfter("seven", "four");
+		console.info("Display");
+		list.display();
+
+	</script>
+</body>
+</html>
