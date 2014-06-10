@@ -4,7 +4,7 @@ Find the least difference between any two elements of an integer array.
 
 function leastDifference(arr){
 	arr = arr.sort(function(a, b) { return a - b});
-	if(arr.length === 1){
+	if(arr.length < 2){
 		return null;
 	}
 

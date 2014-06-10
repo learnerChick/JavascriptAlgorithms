@@ -2,12 +2,33 @@
 <html lang="en">
 <head>
 	<title>Min Max Array</title>
+	<link rel="stylesheet" href="../QUnit/qunit.css">
+</head>
 </head>
 <body>
-	<script src="MinMaxArray.js"></script>
+	<div id="qunit"></div>
+  	<div id="qunit-fixture"></div>
+  	<script src="MinMaxArray.js"></script>
+	<script src="../QUnit/qunit.js"></script>
+	
 	<script>
-		var result = minMaxArray([1, -5, 200, 32, 55, -4, 2]);
-		console.log("Min is: ", result.min, " ,Max is: ", result.max);
+		QUnit.test("Min max with regular array", function(assert){
+			var array = [1, -5, 200, 32, 55, -4, 2];
+			assert.equal(minMaxArray(array).min, -5);
+			assert.equal(minMaxArray(array).max, 200);
+		});
+
+		QUnit.test("Min max with single array entry", function(assert){
+			var array = [1];
+			assert.equal(minMaxArray(array).min, 1);
+			assert.equal(minMaxArray(array).max, 1);
+		});
+
+		QUnit.test("Least Difference", function(assert){
+			var array = [];
+			assert.equal(minMaxArray(array), null);
+		});
+
 	</script>
 </body>
 </html>

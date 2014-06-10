@@ -21,7 +21,7 @@ function LargestSubArray(arr){
 	var	maxEnd = 0;
 	var	maxSum = 0;
 
-	while(currentEnd !== arr.length){
+	while(currentEnd < arr.length){
 		currentSum = currentSum + arr[currentEnd];
 
 		if(currentSum > maxSum){
@@ -39,5 +39,7 @@ function LargestSubArray(arr){
 
 	console.log("Maximum sum is: ", maxSum);
 	console.log("Starts at:", maxStart, " Ends at: ", maxEnd);
+
+	return arr.slice(maxStart, maxEnd);
 }
 

@@ -2,12 +2,30 @@
 <html lang="en">
 <head>
 	<title>Least Difference</title>
+	<link rel="stylesheet" href="../QUnit/qunit.css">
 </head>
 <body>
+	<div id="qunit"></div>
+  	<div id="qunit-fixture"></div>
 	<script src="LeastDifference.js"></script>
+	<script src="../QUnit/qunit.js"></script>
 	<script>
-		var result = leastDifference([1, -5, 200, 32, 55, -4, 2]);
-		console.log(result);
+		
+		QUnit.test("Least Difference", function(assert){
+			var array = [1, -5, 200, 32, 55, -4, 2];
+			assert.equal(leastDifference(array), 1);
+		});
+
+		QUnit.test("Least Difference", function(assert){
+			var array = [];
+			assert.equal(leastDifference(array), null);
+		});
+
+		QUnit.test("Least Difference", function(assert){
+			var array = [2];
+			assert.equal(leastDifference(array), null);
+		});
+
 	</script>
 </body>
 </html>

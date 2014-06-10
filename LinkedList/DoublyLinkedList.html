@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Doubly Linked List</title>
+</head>
+<body>
+	<script src="DoublyLinkedList.js"></script>
+	<script>
+		var list = new DoublyLinkedList();
+		list.insertFirst("four");
+		list.insertFirst("three");
+		/*list.insertFirst("two");
+		list.insertFirst("one");
+		list.insertLast("seven");
+		list.insertLast("eight");
+		list.insertAfter("five", "four");
+		list.insertAfter("six", "five");*/
+
+		console.info("Display");
+		list.display();
+
+		console.info("Find");
+		console.log(list.find("two"));
+		console.log(list.find("five"));
+		console.log(list.find("nine"));
+
+		console.info("Delete");
+		console.log(list.deleteFirst());
+		list.display();
+		console.info("Display");
+		console.log(list.deleteLast());
+		list.display();
+
+		list.deleteItem("five");
+		console.info("Display");
+		list.display();
+
+	</script>
+</body>
+</html>

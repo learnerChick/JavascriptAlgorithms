@@ -10,7 +10,11 @@
  */
 
 function minMaxArray(arr){
-	var min, max, begin;
+	var min, max;
+
+	if(arr.length === 0){
+		return null;
+	}
 
 	if(arr.length % 2 === 0){
 		min = arr[0];
