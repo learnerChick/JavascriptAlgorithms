@@ -2,17 +2,34 @@
 <html lang="en">
 <head>
 	<title>Move Zeros Right</title>
+	<link rel="stylesheet" href="../QUnit/qunit.css">
 </head>
 <body>
+	<div id="qunit"></div>
+  	<div id="qunit-fixture"></div>
 	<script src="MoveZerosToRight.js"></script>
+	<script src="../QUnit/qunit.js"></script>
+	
 	<script>
-		moveZerosRight([6,0,2,8,1,0,2]);
+		QUnit.test("Moving zeros to the right", function(assert){
+			var array = [6,0,2,8,1,0,2];
+			assert.equal(moveZerosRight(array), "6228100");
+		});
 
-		moveZerosRight([6,0,2,8,1,0,0]);
+		QUnit.test("Moving zeros to the right", function(assert){
+			var array = [6,0,2,8,1,0,0];
+			assert.equal(moveZerosRight(array), "6128000");
+		});
 
-		moveZerosRight([0,0,2,0,1,0,0]);
+		QUnit.test("Moving zeros to the right", function(assert){
+			var array = [0,0,2,0,1,0,0];
+			assert.equal(moveZerosRight(array), "1200000");
+		});
 
-		moveZerosRight([6,0,3,0,1]);
+		QUnit.test("Moving zeros to the right", function(assert){
+			var array = [6,0,3,0,1];
+			assert.equal(moveZerosRight(array), "61300");
+		});
 	</script
 </body>
 </html>

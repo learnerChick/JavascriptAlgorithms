@@ -17,7 +17,7 @@ function findNextLargerNumber(number){
 	number = number.toString().split("");
 
 	//1) Start from the end.
-	for(var i = number.length; i >= 0; i--){
+	for(var i = number.length - 1; i >= 0; i--){
 		var left = number[i-1];
 		var right = number[i];
 		var pivot = -1;
@@ -32,7 +32,7 @@ function findNextLargerNumber(number){
 			pivot = left;
 
 			// 4) Divide the numbers into 2 chunks.  One from index 0 to right before pivot.  The other from pivot to end.
-			var part1 = number.slice(0, i - 1);
+			var part1 = number.slice(0, i-1);
 			var part2 = number.slice(i-1, number.length);
 
 			//5) Sort second chunk into order. 
