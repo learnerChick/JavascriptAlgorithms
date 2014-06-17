@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Dictionary</title>
+</head>
+<body>
+	<script src="Dictionary.js"></script>
+	<script>
+		var pbook = new Dictionary();
+		pbook.add("Mike","123");
+		pbook.add("David", "345");
+		pbook.add("Cynthia", "456");
+		console.log("David's extension: " + pbook.find("David"));
+		pbook.remove("David");
+		pbook.showAll();
+		pbook.sort();
+	</script>
+</body>
+</html>

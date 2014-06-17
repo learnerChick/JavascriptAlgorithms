@@ -57,6 +57,7 @@ DoublyLinkedList.prototype.deleteFirst = function(){
 	if(this.head !== null){
 		var oldHead = this.head;
 		this.head = this.head.next;
+		this.head.previous = null;
 		return oldHead;
 	}
 	return null;
