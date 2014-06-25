@@ -56,8 +56,18 @@ DoublyLinkedList.prototype.insertLast = function(element){
 DoublyLinkedList.prototype.deleteFirst = function(){
 	if(this.head !== null){
 		var oldHead = this.head;
-		this.head = this.head.next;
-		this.head.previous = null;
+		
+		if(this.head === this.tail){
+			this.head = this.tail = this.head.next;
+		}
+		else{
+			this.head = this.head.next;
+		}
+
+		if(this.head !== null){
+			this.head.previous = null;	
+		}
+		
 		return oldHead;
 	}
 	return null;
@@ -67,8 +77,19 @@ DoublyLinkedList.prototype.deleteLast = function(){
 	var current = this.tail;
 	if(this.tail !== null){
 		var oldTail = this.tail;
-		this.tail = oldTail.previous;
-		this.tail.next = null;
+
+		if(this.tail === this.head){
+			this.tail = this.head = oldTail.previous;
+		}
+		else{
+			this.tail = oldTail.previous;
+		}
+		
+		
+		if(this.tail !== null){
+			this.tail.next = null;
+		}
+		
 		return oldTail;
 	}
 	else if(this.head !== null){
@@ -80,12 +101,29 @@ DoublyLinkedList.prototype.deleteItem = function(item){
 	var current = this.head;
 	while(current !== null){
 		if(current.element === item){
-			var oldCurrent = current.item;
-			var previous = current.previous;
-			var next = current.next;
+			var oldCurrent = current.element;
 
-			previous.next = next;
-			next.previous = previous;
+			if(this.head === this.tail){
+				this.head = this.tail = null;
+			}
+			else if(current === this.head){
+				this.head = current.next;
+			}
+			else if(current === this.tail){
+				this.tail = current.previous;
+			}
+			else{
+				var previous = current.previous;
+				var next = current.next;
+
+				if(previous !== null){
+					previous.next = next;
+				}
+				if(next !== null){
+					next.previous = previous;
+				}
+			}
+
 			return oldCurrent;
 		}
 		else{

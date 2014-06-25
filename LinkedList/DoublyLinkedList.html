@@ -9,8 +9,8 @@
 		var list = new DoublyLinkedList();
 		list.insertFirst("four");
 		list.insertFirst("three");
-		/*list.insertFirst("two");
-		list.insertFirst("one");
+		list.insertFirst("two");
+		/*list.insertFirst("one");
 		list.insertLast("seven");
 		list.insertLast("eight");
 		list.insertAfter("five", "four");
@@ -25,13 +25,15 @@
 		console.log(list.find("nine"));
 
 		console.info("Delete");
-		console.log(list.deleteFirst());
+	//	console.log(list.deleteFirst());
 		list.display();
 		console.info("Display");
-		console.log(list.deleteLast());
+		//console.log(list.deleteLast());
 		list.display();
 
-		list.deleteItem("five");
+		list.deleteItem("two");
+		list.deleteItem("four");
+		list.deleteItem("three");
 		console.info("Display");
 		list.display();
 

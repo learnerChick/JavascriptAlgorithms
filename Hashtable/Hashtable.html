@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Hashtable</title>
+</head>
+<body>
+
+    <script src="../RequireJS/require.js"></script>
+    <script>
+        require(["Hashtable"], function(Hashtable){
+            var hashtable = new Hashtable();
+            hashtable.put("David");
+            hashtable.put("Jennifer");
+            hashtable.put("Donnie");
+            hashtable.put("Dnonnie");
+            hashtable.put("Raymond");
+            hashtable.put("Cynthia");
+            hashtable.put("Mike");
+            hashtable.put("Clayton");
+            hashtable.put("Danny");
+            hashtable.put("Jonathan")
+            hashtable.remove("Danny");
+            console.log(hashtable);
+            hashtable.display();
+        });
+    </script>
+</body>
+</html>
