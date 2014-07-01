@@ -6,8 +6,7 @@
 
 function reverseWords(str){
     var end = str.length;
-    console.log("bag");
-    var reversedStr = "m";
+    var reversedStr = "";
 
     for(var i = str.length - 1; i >= -1; i--){
         if(str[i] === " " || i == -1){

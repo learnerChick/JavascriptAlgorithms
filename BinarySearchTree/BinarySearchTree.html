@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Binary Search Tree</title>
+</head>
+<body>
+
+    <script src="../RequireJS/require.js"></script>
+    <script>
+        require(["BinarySearchTree"], function(BinarySearchTree){
+            var bst = new BinarySearchTree();
+            bst.add(200);
+            bst.add(1);
+            bst.add(31);
+            bst.add(4);
+            bst.add(500);
+            bst.add(403);
+            console.info("Size of BST is: ", bst.getSize());
+            console.log(bst);
+            bst.remove(200);
+            console.log(bst);
+            console.log(bst.find(4));
+            console.log(bst.inorder());
+            console.log(bst.postorder());
+            console.log(bst.preorder());
+
+        });
+    </script>
+</body>
+</html>

@@ -11,7 +11,7 @@
 
 define(["../LinkedList/DoublyLinkedList.RequireJS"], function(LinkedList){
 
-	Hashtable = function(){
+	var Hashtable = function(){
 		this.data = {};
 	};
 
