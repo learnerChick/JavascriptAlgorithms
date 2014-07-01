@@ -1,4 +1,4 @@
-define(["Node"], function(Node){
+define(["Node", "Queue/Queue.RequireJS"], function(Node, Queue){
     var BinarySearchTree = function(element){
         this.root = null;
     };
@@ -15,7 +15,6 @@ define(["Node"], function(Node){
             return node.count;
         }
     };
-
 
 
     BinarySearchTree.prototype.add = function(item){
@@ -113,6 +112,19 @@ define(["Node"], function(Node){
         return node;
     };
 
+    BinarySearchTree.prototype.findMax = function(){
+        return this.findMaxRecursive(this.root);
+    }
+
+    BinarySearchTree.prototype.findMaxRecursive = function(node){
+        if(node !== null){
+            if(node.right !== null){
+                node = this.findMaxRecursive(node.right);
+            }
+        }
+        return node;
+    }
+
 
     //this only does one node level
     /* first check if left node is not null, if not null, removeMin of left node
@@ -173,7 +185,7 @@ define(["Node"], function(Node){
 
     /*VLR (value, left, right
          * Start at root, get value, go left, get value, go down recursively. 
-         * When no more lefts, go up, go right, print value, repeat above.
+         * When no more lefts, go up, go right, print value, repeat above.  Also known as depth first search
     */
     BinarySearchTree.prototype.preorder = function(){
         var arr = [];
@@ -183,7 +195,7 @@ define(["Node"], function(Node){
     //LRV (left, right, value, recursively)
     BinarySearchTree.prototype.preorderTraversal = function(node, arr){
         arr.push(node.element);
-        
+
         if(node.left !== null){
             this.preorderTraversal(node.left, arr);
         }
@@ -195,6 +207,26 @@ define(["Node"], function(Node){
         
         return arr.join(", ");
     }    
+
+    BinarySearchTree.prototype.bfs = function(){
+        this.bfsImplementation(this.root);
+    }
+
+    BinarySearchTree.prototype.bfsImplementation = function(node){
+        var queue = new Queue();
+        queue.enqueue(node);
+
+        while(!queue.isEmpty()){
+            var current = queue.dequeue();
+            if(current !== null){
+                continue;
+            }
+            console.log(current.element);
+
+            queue.enqueue(current.left);
+            queue.enqueue(current.right);
+        }
+    }
 
 
     return BinarySearchTree;
