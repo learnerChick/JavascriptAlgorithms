@@ -3,6 +3,18 @@
 	{
 		"selected_items":
 		[
+			[
+				"s",
+				"substring"
+			],
+			[
+				"len",
+				"length"
+			],
+			[
+				"rever",
+				"reversedStr"
+			]
 		]
 	},
 	"buffers":
@@ -35,7 +47,7 @@
 	},
 	"console":
 	{
-		"height": 139.0,
+		"height": 0.0,
 		"history":
 		[
 		]
@@ -51,6 +63,14 @@
 	},
 	"file_history":
 	[
+		"/Users/dhanas/Desktop/JavascriptAlgorithms/Arrays/LongestPalindrome.js",
+		"/Users/dhanas/Desktop/JavascriptAlgorithms/Arrays/LongestPalindrom.html",
+		"/Users/dhanas/Desktop/JavascriptAlgorithms/Arrays/ReverseWords.html",
+		"/Users/dhanas/Desktop/JavascriptAlgorithms/Recursion/Permutations.js",
+		"/Users/dhanas/Desktop/JavascriptAlgorithms/Recursion/Permutations.html",
+		"/Users/dhanas/Desktop/JavascriptAlgorithms/Arrays/ReverseWords.js",
+		"/Users/dhanas/Desktop/JavascriptAlgorithms/.gitignore",
+		"/Users/dhanas/Desktop/JavascriptAlgorithms/Queue/PriorityQueueMinHeap.js",
 		"/C/Users/Dhana/Documents/Code/CSS/Menu/override.css",
 		"/C/Users/Dhana/Documents/Code/CSS/Menu/bootstrap.css",
 		"/C/Users/Dhana/Documents/Code/CSS/Menu/index.html",
@@ -103,7 +123,7 @@
 	},
 	"input":
 	{
-		"height": 0.0
+		"height": 33.0
 	},
 	"layout":
 	{
@@ -134,9 +154,9 @@
 	},
 	"output.sftp":
 	{
-		"height": 233.0
+		"height": 313.0
 	},
-	"project": "Algorithms.sublime-project",
+	"project": "JSAlgo.sublime-project",
 	"replace":
 	{
 		"height": 42.0
@@ -169,11 +189,11 @@
 	"settings":
 	{
 	},
-	"show_minimap": false,
-	"show_open_files": false,
+	"show_minimap": true,
+	"show_open_files": true,
 	"show_tabs": true,
 	"side_bar_visible": true,
-	"side_bar_width": 150.0,
+	"side_bar_width": 256.0,
 	"status_bar_visible": true,
 	"template_settings":
 	{
