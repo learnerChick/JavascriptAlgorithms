@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Undirected Graph</title>
+</head>
+<body>
+
+    <script src="../RequireJS/require.js"></script>
+    <script>
+        require(["UndirectedGraph"], function(UndirectedGraph){
+            var graph = new UndirectedGraph(10);
+            graph.addEdge(0, 1);
+            graph.addEdge(0, 2);
+            graph.addEdge(1, 3);
+            graph.addEdge(2, 4);
+
+            graph.showGraph();
+            graph.dfs(0);
+        });
+    </script>
+</body>
+</html>

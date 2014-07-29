@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Directed Graph</title>
+</head>
+<body>
+
+    <script src="../RequireJS/require.js"></script>
+    <script>
+        require(["DirectedGraph"], function(DirectedGraph){
+            var graph = new DirectedGraph(10);
+            graph.addEdge(0, 1);
+            graph.addEdge(0, 2);
+            graph.addEdge(1, 3);
+            graph.addEdge(2, 4);
+
+            graph.showGraph();
+            graph.dfs(0);
+        });
+    </script>
+</body>
+</html>
