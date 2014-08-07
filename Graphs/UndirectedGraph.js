@@ -46,5 +46,26 @@ define(function(){
         }
     }
 
+    Graph.prototype.bfs = function(vertex){
+        var queue = [];
+        var self = this;
+        this.marked[vertex] = true
+        queue.push(vertex);
+
+        while(queue.length > 0){
+            var v = queue.shift(); //remove from front
+            console.log("Visited vertex: ", v);
+
+            if(typeof this.adj[v] !== "undefined"){
+                this.adj[v].forEach(function(ver){
+                    if(!self.marked[ver]){
+                        queue.push(ver);
+                        self.marked[ver] = true;
+                    }
+                });
+            }
+        }
+    }
+
     return Graph;
 });
