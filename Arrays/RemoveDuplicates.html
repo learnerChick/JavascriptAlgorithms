@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>Remove Duplicates</title>
+</head>
+<body>
+    <script>
+    /*
+Design an algorithm and write code to remove the duplicate characters in a string without using any additional buffer. NOTE: One or two additional variables are fine. An extra copy of the array is not.
+*/
+
+function removeDuplicates(str){
+    var maxLen = str.length;
+    //place updated string at the end of old string
+    var newLenBegin = maxLen;
+    if(maxLen === 0){
+        return false;
+    }
+    else if(maxLen === 1){
+        console.log(str);
+        return;
+    }
+    //set up first char at end of str
+    str = str + str[0];
+    //check if subsequent characters are repeated, keep adding characters at the end of the string
+    for(var i = 1; i < maxLen; i++){
+        if(str.substring(maxLen).indexOf(str[i]) < 0){
+            str = str + str[i];
+        }
+    }
+
+    console.log(str.substring(maxLen));
+}
+
+removeDuplicates("kodeknight");
+removeDuplicates("aab");
+removeDuplicates("a")
+removeDuplicates("");
+</script>
+</body>
+</html>
+
+
+
+
