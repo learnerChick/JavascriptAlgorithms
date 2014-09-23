@@ -1,0 +1,23 @@
+<!-- /* Replace all spaces in a string with %20 */ -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Space replacer</title>
+</head>
+<body>
+    <script>
+        function spaceReplacer(str, replacer){
+            if(str.length <= 1){
+                return false;
+            }
+            var regex = /\s/g;
+            return str.replace(regex, replacer);
+        }
+
+        console.log(spaceReplacer("geek is here", "%20"));
+        console.log(spaceReplacer("geekisnothere", "%20"));
+        console.log(spaceReplacer("", "%20"));
+         console.log(spaceReplacer("a", "%20"));
+    </script>
+</body>
+</html>
