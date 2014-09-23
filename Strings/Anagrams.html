@@ -1,0 +1,50 @@
+<!-- /* Write a method to decide if two strings are anagrams or not. */ -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Anagrams</title>
+</head>
+<body>
+    <script>
+        function anagram(str1, str2){
+            var dict = {};
+            if(str1.length !== str2.length){
+                return false;
+            }
+
+            for(var i = 0; i < str1.length; i++){
+                var ch = str1[i];
+                if(typeof dict[ch] === 'undefined'){
+                    dict[ch] = 1;
+                }
+                else{
+                    dict[ch]++;
+                }
+            }
+
+            for(var j = 0; j < str2.length; j++){
+                var ch = str2[j];
+                if(typeof dict[ch] === 'undefined'){
+                    return false;
+                }
+                else{
+                    dict[ch]--;
+                }
+            }
+
+            for(i in dict){
+                if(dict[i] > 0){
+                    return false;
+                }
+            }
+            return true;
+        }
+
+        console.log(anagram("abv", "vba"));
+        console.log(anagram("abec", "abcd"));
+        console.log(anagram("a", "vba"));
+        console.log(anagram("abba", "abaa"));
+        console.log(anagram("iamhappy", "happyami"))
+    </script>
+</body>
+</html>
