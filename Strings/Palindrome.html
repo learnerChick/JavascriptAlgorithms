@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Check if string is a palindrome</title>
+</head>
+<body>
+    <script>
+        function isPalindrome(str){
+            var len = str.length;
+           if(len === 0){
+            return false;
+           }
+           else if(len === 1){
+            return true;
+           }
+
+           for(var i = 0; i < len; i++){
+            if(str[i] === str[len-1]){
+                len = len - 1;
+            }
+            else{
+                return false;
+            }
+           }
+           return true;
+        }
+
+        console.log("acaramanamaraca", isPalindrome("acaramanamaraca"));
+        console.log("racecar", isPalindrome("racecar"));
+        console.log("a", isPalindrome("a"));
+        console.log("hello", isPalindrome("hello"));
+        console.log(" ", isPalindrome(""));
+
+    </script>
+</body>
+</html>
