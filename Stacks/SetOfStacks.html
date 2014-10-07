@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Set of Stacks</title>
+</head>
+<body>
+    <script src="Stack.js"></script>
+    <script src="SetOfStacks.js"></script>
+    <script>
+    var stack = new SetOfStacks();
+    stack.push(1);
+    stack.push(2);
+    stack.push(3);
+    stack.push(4);
+    stack.push(5);
+    stack.push(6);
+    stack.push(7);
+    console.log(stack.pop());
+    console.log(stack.popAt(1));
+
+    var stack2 = new SetOfStacks();
+    console.log(stack2.pop());
+    stack2.push(6);
+    stack2.push(7);
+    console.log(stack2.pop());
+    stack2.popAt(5);
+    console.log(stack2.pop());
+    console.log(stack2.pop());
+    </script>
+</body>
+</html>
