@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Trie</title>
+</head>
+<body>
+
+<script src="../RequireJS/require.js"></script>
+<script>
+    require(["Trie"], function(Trie){
+        var trie = new Trie();
+        trie.add("app");
+        trie.add("apple");
+        trie.add("apply");
+        trie.add("applied");
+        trie.add("ding");
+        console.log(trie.getTree());
+        console.log(trie.find("app"), "finding app");
+        console.log(trie.find("ding"), "finding ding");
+        console.log(trie.find("app"), "finding app");
+        console.log(trie.find("apple"), "finding apple");
+        console.log(trie.getWordsWithPrefix("ap"));
+        console.log(trie.getWordsWithPrefix("app"));
+        console.log(trie.getWordsWithPrefix("s"));
+        console.log(trie.getWordsWithPrefix("apl"));
+        console.log(trie.getWordsWithPrefix(""));
+    });
+</script>
+</body>
+</html>
