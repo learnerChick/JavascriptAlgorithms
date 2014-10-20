@@ -1,41 +1,28 @@
 /*
     The stack is ordered smaller items in the bottom, larger item on top.
 
-    1) Recursively pop the stack until empty.
-    2) Then, try to put the popped number with another recursive function called insertSorted.
-    3) In insertion part, if stack is empty, just push the number into the stack and return.
-    4) If not empty, compare the top of stack with number. If number is less than peek(),
-       then pop the stack and try calling the insert method again.  Finally push the top back.
-       If number is greater than peek(), then push the number into the stack.
+    1) While the first stack is not empty, pop the stack.
+    2) While the second stack is not empty, and the item in the second stack peek is smaller than the popped item, pop the second
+        stack and add it to the first stack.
+    3) When while for second loop breaks, add the popped item into first stack.
 */
 function StackSorter(stack){
     this.stack = stack;
 }
 
 StackSorter.prototype.sort = function(){
-    if(!this.stack.isEmpty()){
-        var top = this.stack.pop();
-        this.sort();
-        this.insertSorted(top);
-    }
-}
+    var s2 = new Stack();
+    while(!this.stack.isEmpty()){
+        var popped = this.stack.pop();
 
-StackSorter.prototype.insertSorted = function(number){
-    if(this.stack.isEmpty()){
-        this.stack.push(number);
-        return;
+        while(!s2.isEmpty() && s2.peek() < popped){
+            this.stack.push(s2.pop());
+        }
+        s2.push(popped);
     }
 
-    if(number < this.stack.peek()){
-        var top = this.stack.pop();
-        this.insertSorted(number);
-        this.stack.push(top);
-    }
-    else{
-        this.stack.push(number);
-    }
-    
-}
+    this.stack = s2;
+};
 
 StackSorter.prototype.toString = function(){
     return this.stack.toString();
