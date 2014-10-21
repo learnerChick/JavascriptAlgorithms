@@ -101,8 +101,9 @@ define(function(){
             return (delete node.$ && noChildren(node));
         }
         else{
-            if(canRemove(word, index+1, node[word[index+1]])){
-                return (delete node[word[index+1]]) && noChildren(node);
+            var ch = word[index+1];
+            if(canRemove(word, index+1, node[ch])){
+                return (delete node[ch]) && noChildren(node);
             }
         }
         return false;
