@@ -1,4 +1,4 @@
-define(["Node", "Queue/Queue.RequireJS"], function(Node, Queue){
+define(["Node", "../Queue/Queue.RequireJS"], function(Node, Queue){
     var BinarySearchTree = function(element){
         this.root = null;
     };
@@ -104,10 +104,8 @@ define(["Node", "Queue/Queue.RequireJS"], function(Node, Queue){
     }
 
     BinarySearchTree.prototype.findMinRecursive = function(node){
-        if(node !== null){
-            if(node.left !== null){
-                node = this.findMinRecursive(node.left);
-            }
+        if(node !== null && node.left !== null){
+            node = this.findMinRecursive(node.left);
         }
         return node;
     };
@@ -117,16 +115,12 @@ define(["Node", "Queue/Queue.RequireJS"], function(Node, Queue){
     }
 
     BinarySearchTree.prototype.findMaxRecursive = function(node){
-        if(node !== null){
-            if(node.right !== null){
-                node = this.findMaxRecursive(node.right);
-            }
+        if(node !== null && node.right !== null){
+            node = this.findMaxRecursive(node.right);
         }
         return node;
     }
 
-
-    //this only does one node level
     /* first check if left node is not null, if not null, removeMin of left node
         if node.left == null, then return right node
     */
@@ -139,6 +133,7 @@ define(["Node", "Queue/Queue.RequireJS"], function(Node, Queue){
             return node;
         }
         else{
+            //basically, when the left node is null in above, that's the node we want to remove.  So by returning the right node, we're replacing the left node with the right node's value.
             return node.right;
         }
     }
