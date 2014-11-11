@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Binary Search Tree</title>
+</head>
+<body>
+<!--
+Given an array where elements are sorted in ascending order, convert it to a height balanced BST.
+-->
+
+<script src="../RequireJS/require.js"></script>
+<script>
+    require(["CreateBalancedBST"], function(BalancedBST){
+       var tree = BalancedBST([1,2,3,4,5,6,7,8,9]);
+       console.log(tree);
+
+    });
+</script>
+</body>
+</html>
