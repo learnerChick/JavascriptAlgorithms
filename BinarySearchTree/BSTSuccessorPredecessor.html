@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Binary Search Tree Successor and Predecessor</title>
+</head>
+<body>
+
+<script src="../RequireJS/require.js"></script>
+<script>
+    require(["BSTWithParent", "BSTSuccessorPredecessor"], function(BinarySearchTree, BSTSuccPred){
+        var bst = new BinarySearchTree();
+
+        bst.add(18);
+        bst.add(16);
+        bst.add(50);
+        bst.add(14);
+        bst.add(17);
+        bst.add(48);
+        bst.add(80);
+        bst.add(44);
+        bst.add(49);
+        bst.add(27);
+        bst.add(45);
+
+        var node = bst.find(50);
+        console.log(BSTSuccPred.findSuccessor(bst, node));//80
+
+        var node = bst.find(18);
+        console.log(BSTSuccPred.findSuccessor(bst, node));//17
+
+        var node = bst.find(48);
+        console.log(BSTSuccPred.findSuccessor(bst, node));//49
+
+        var node = bst.find(27);
+        console.log(BSTSuccPred.findSuccessor(bst, node));//44
+
+        var node = bst.find(45);
+        console.log(BSTSuccPred.findSuccessor(bst, node));//44
+
+
+    });
+</script>
+</body>
+</html>

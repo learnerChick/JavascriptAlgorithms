@@ -1,4 +1,4 @@
-/* 
+/*
 Given an integer array find the subarray which has the largest sum.
 
 1) First, initialize a few variables to 0.  That is currentSum, currentStart, currentEnd, maxSum, maxStart, maxEnd.

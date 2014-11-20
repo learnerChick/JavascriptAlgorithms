@@ -1,5 +1,6 @@
 /*
-    A string is called palindrome when it is same while reading character by character from left side or right side. Given any arbitrary string find out the largest substring in it which is a palindrome.
+    A string is called palindrome when it is same while reading character by character from left side or right side.
+    Given any arbitrary string find out the largest substring in it which is a palindrome.
     
 
     1) First, get the length of string.  Length <= 0 is invalid.  Length === 1 is considered a palindrome, so return that string.
