@@ -40,7 +40,6 @@ function longestPalindrome(str){
         var tmp = finder(str, i, i);
         if(tmp.length > longest.length){
             longest = tmp;
-
         }
 
         //need this below for even length strings
@@ -60,8 +59,12 @@ function finder(str, begin, end){
         str.charAt(begin) === str.charAt(end)){
         begin--;
         end++;
+        //console.log(begin, end);
     }
 
+    //we return one more than begin because we have decremented it above if the even if the condition
+    //above failed.  The same with the end because we increased it and we want to include the end part
+    //in the return.
     return str.substring(begin + 1, end);
 }
 
