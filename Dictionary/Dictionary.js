@@ -1,5 +1,5 @@
 function Dictionary(){
-	this.data = [];
+	this.data = {};
 }
 
 Dictionary.prototype.add = function(key, value){
