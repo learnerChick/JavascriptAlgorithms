@@ -79,23 +79,25 @@ LinkedList.prototype.delete = function(item){
 	var current = this.head;
 	var previous = this.head;
 
-	while(current.element !== item){
-		if(current.next === null){
-			return null;
-		}
-		else{
-			previous = current;
-			current = current.next;
-		}
-	}
+    if(this.head === null){
+        return null;
+    }
 
-	if(current === this.head){
-		this.head = this.head.next;
-	}
-	else{
-		previous.next = current.next;
-	}
-	return current;
+    if(current.element === item){
+        this.head = this.head.next;
+        return true;
+    }
+
+    while(current !== null){
+        if(current.element !== item){
+            previous = current;
+            current = current.next;
+        }
+        else{
+            previous.next = current.next;
+            return true;
+        }
+    }
 }
 
 LinkedList.prototype.display = function(){
