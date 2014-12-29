@@ -1,5 +1,6 @@
 /*
-	Hashtable solution using separate chaining to address collision issue.  Doubly linked list is used to remove 
+	Hashtable solution using separate chaining to address collision issue.  This linked list will
+	take extra space.  Doubly linked list is used to remove
 	store the items.
 
 	Space: O(n)
@@ -15,17 +16,15 @@ define(["../LinkedList/DoublyLinkedList.RequireJS"], function(LinkedList){
 		this.data = {};
 	};
 
+	//djb2 hashing function
 	var hash = function(item){
-		var hashed = 0;
-		if(item.length === 0){
-			return hashed;
-		}
+		var h = 5381;
+
 		for(var i = 0; i < item.length; i++){
 			var char = item.charCodeAt(i);
-			hashed = ((hashed << 5) - hashed) + char;
-			hashed = hashed & hashed;
+			h = ((h << 5) + h) + char; //h * 33 + c
 		}
-		return hashed;
+		return h;
 	};
 
 	Hashtable.prototype.put = function(item){
@@ -42,7 +41,8 @@ define(["../LinkedList/DoublyLinkedList.RequireJS"], function(LinkedList){
 	Hashtable.prototype.get = function(item){
 		var bucketLocation = hash(item);
 		if(typeof this.data[bucketLocation] !== "undefined"){
-			return this.data[bucketLocation];
+			//get the item from the linked list
+			return this.data[bucketLocation].find(item);
 		}
 		return null;
 	}
