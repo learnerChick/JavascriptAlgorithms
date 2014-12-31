@@ -22,3 +22,27 @@ function isPalindrome(str){
 	}
 	return false;
 }
+
+
+function isPalindromeEfficient(str){
+	if(str.length === 0){
+		return false;
+	}
+	else if(str.length === 1){
+		return true;
+	}
+
+	var begin = 0,
+		end = str.length - 1;
+
+	while(begin <= end && end >= 0 && begin !== end){
+		if(str[begin] === str[end]){
+			begin++;
+			end--;
+		}
+		else{
+			return false;
+		}
+	}
+	return true;
+}

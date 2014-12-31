@@ -34,9 +34,6 @@ define(["Node", "../Queue/Queue.RequireJS"], function(Node, Queue){
         }
         node.count = 1 + this.size(node.left) + this.size(node.right);
 
-        //if(this.root === null){
-        //    this.root =  node;
-        //}
         return node;
     }
 
@@ -222,7 +219,6 @@ define(["Node", "../Queue/Queue.RequireJS"], function(Node, Queue){
             queue.enqueue(current.right);
         }
     }
-
 
     return BinarySearchTree;
 });

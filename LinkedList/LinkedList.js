@@ -64,6 +64,23 @@ LinkedList.prototype.insertAfter = function(item, afterWhich){
 	return null;
 }
 
+LinkedList.prototype.insertLast = function(item){
+	if(this.head === null){
+		this.head = new Node(item);
+		return;
+	}
+	else{
+		var current = this.head;
+		while(current.next !== null){
+			current = current.next;
+		}
+
+		current.next = new Node(item);
+	}
+
+};
+
+
 LinkedList.prototype.find = function(item){
 	var current = this.head;
 	while(current !== null){
