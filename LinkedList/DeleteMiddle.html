@@ -11,36 +11,22 @@
     Result: nothing is returned, but the new linked list looks like a->b->d->e
 -->
 <script src="LinkedList.js"></script>
+<script src="DeleteMiddle.js"></script>
 <script>
     var linkedList = new LinkedList();
     linkedList.insertFirst("10");
-    linkedList.insertFirst("10");
+    linkedList.insertFirst("19");
     linkedList.insertFirst("4");
     linkedList.insertFirst("5");
     linkedList.insertFirst("1");
     linkedList.insertFirst("2");
     linkedList.insertFirst("7");
     linkedList.insertFirst("5");
-    linkedList.insertFirst("10");
+    linkedList.insertFirst("120");
     linkedList.insertFirst("8");
 
-    var nodeToDelete = linkedList.find("4");
-    deleteNode(nodeToDelete);
-    console.log(linkedList);
-
-    function deleteNode(nodeToDelete){
-        //we cannot delete the last node since there would be nothing to copy
-        if(nodeToDelete === null || nodeToDelete.next === null){
-            return false;
-        }
-        //in this case, when you only have the current node, you copy the value of the next node to the current node
-        else{
-            var next = nodeToDelete.next;
-            nodeToDelete.element = next.element;
-            nodeToDelete.next = next.next;
-            return true;
-        }
-    }
+    console.log(deleteMiddle(linkedList, "4"));
+    console.log(deleteMiddle(linkedList, "10"));
 </script>
 </body>
 </html>
