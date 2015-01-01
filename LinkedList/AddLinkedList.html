@@ -5,77 +5,53 @@
 </head>
 <body>
     <!----
-
-    You have two numbers represented by a linked list, where each node contains a single digit. The digits are stored in reverse order, such that the 1’s digit is at the head of the list. Write a function that adds the two numbers and returns the sum as a linked list.
+    You have two numbers represented by a linked list, where each node contains a single digit.
+    The digits are stored in reverse order, such that the 1’s digit is at the head of the list.
+    Write a function that adds the two numbers and returns the sum as a linked list.
     EXAMPLE
     Input: (3 -> 1 -> 5), (5 -> 9 -> 2)
     Output: 8 -> 0 -> 8
-
 -->
-    <script src="LinkedList.js"></script>
-    <script>
-     var list1 = new LinkedList();
-     list1.insertFirst(5);
-     list1.insertFirst(1);
-     list1.insertFirst(3);
+<script src="../RequireJS/require.js"></script>
+<script>
+    require(["LinkedList.RequireJS", "AddLinkedList"], function(LinkedList, AddLinkedList){
+        var list1 = new LinkedList();
+        list1.insertFirst(5);
+        list1.insertFirst(1);
+        list1.insertFirst(3);
 
-     var list2 = new LinkedList();
-     list2.insertFirst(2);
-     list2.insertFirst(9);
-     list2.insertFirst(5);
+        var list2 = new LinkedList();
+        list2.insertFirst(2);
+        list2.insertFirst(9);
+        list2.insertFirst(5);
 
-     var list3 = new LinkedList();
-     list3.insertFirst(3);
-     list3.insertFirst(6);
-     list3.insertFirst(5);
+        var list3 = new LinkedList();
+        list3.insertFirst(3);
+        list3.insertFirst(6);
+        list3.insertFirst(5);
 
-     var list4 = new LinkedList();
-     list4.insertFirst(2);
-     list4.insertFirst(4);
-     list4.insertFirst(8);
-
-
-     var list5 = new LinkedList();
-     list5.insertFirst(6);
-     list5.insertFirst(4);
-     list5.insertFirst(9);
-     list5.insertFirst(5);
-     list5.insertFirst(7);
-
-     var list6 = new LinkedList();
-     list6.insertFirst(4);
-     list6.insertFirst(8);
-
-    var totalLinkedList = new LinkedList();
-
-    function add(list1, list2, carryover){
-        var node = new Node();
-        if(list1 === null && list2 === null){
-            return null;
-        }
-
-        var value = carryover;
-        if(list1 !== null){
-            value += list1.element;
-        }
-
-        if(list2 !== null){
-            value += list2.element;
-        }
-
-        node.element = value % 10;
-
-        node.next = add(list1 === null ? null : list1.next, list2 === null ? null : list2.next,  value >= 10 ? 1 : 0);
-        return node;
-    }
-
-    console.log(add(list1.head, list2.head, 0));
-    console.log(add(list3.head, list4.head, 0));
-    console.log(add(list5.head, list6.head, 0));
+        var list4 = new LinkedList();
+        list4.insertFirst(2);
+        list4.insertFirst(4);
+        list4.insertFirst(8);
 
 
+        var list5 = new LinkedList();
+        list5.insertFirst(6);
+        list5.insertFirst(4);
+        list5.insertFirst(9);
+        list5.insertFirst(5);
+        list5.insertFirst(7);
 
+        var list6 = new LinkedList();
+        list6.insertFirst(4);
+        list6.insertFirst(8);
 
-    </script>
+        console.log(new AddLinkedList(list1.head, list2.head, 0)); //8 0 8
+        console.log(new AddLinkedList(list3.head, list4.head, 0)); //3 1 6
+        console.log(new AddLinkedList(list5.head, list6.head, 0)); //5 0 0 5 6
+    });
+</script>
+
 </body>
 </html>
