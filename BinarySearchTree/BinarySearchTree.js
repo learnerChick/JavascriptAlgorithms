@@ -77,8 +77,8 @@ define(["Node", "../Queue/Queue.RequireJS"], function(Node, Queue){
             node.right = this.removeRecursive(item, node.right);
         }
 
-        //if node has both children, find the minimum in the right node.  
-        //Replace the value of node to be removed with found minimum.  
+        //if node has both children, find the minimum in the right node.
+        //Replace the value of node to be removed with found minimum.
         //Since right tree now contains duplicate, remove the duplicate item in the right subtree
         else if(node.left !== null && node.right !== null){
             var minNode = this.findMinRecursive(node.right);
@@ -176,7 +176,7 @@ define(["Node", "../Queue/Queue.RequireJS"], function(Node, Queue){
     }
 
     /*VLR (value, left, right
-         * Start at root, get value, go left, get value, go down recursively. 
+         * Start at root, get value, go left, get value, go down recursively.
          * When no more lefts, go up, go right, print value, repeat above.  Also known as depth first search
     */
     BinarySearchTree.prototype.preorder = function(){
@@ -196,9 +196,9 @@ define(["Node", "../Queue/Queue.RequireJS"], function(Node, Queue){
             this.preorderTraversal(node.right, arr);
         }
 
-        
+
         return arr.join(", ");
-    }    
+    }
 
     BinarySearchTree.prototype.bfs = function(){
         this.bfsImplementation(this.root);
@@ -210,9 +210,11 @@ define(["Node", "../Queue/Queue.RequireJS"], function(Node, Queue){
 
         while(!queue.isEmpty()){
             var current = queue.dequeue();
-            if(current !== null){
+
+            if(current === null){
                 continue;
             }
+
             console.log(current.element);
 
             queue.enqueue(current.left);

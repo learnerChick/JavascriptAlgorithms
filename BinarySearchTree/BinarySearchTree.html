@@ -33,17 +33,18 @@
             bst.add(49);
             bst.add(27);
             bst.add(45);
-            bst.remove(18);
+            //bst.remove(18);
 
 
             console.info("Size of BST is: ", bst.getSize());
             console.log(bst);
-            
+
             //console.log(bst.find(3));
             //console.log(bst.remove(3));
             console.info("Inorder: ", bst.inorder());
             console.log("Postorder:" , bst.postorder());
             console.log("Preorder:", bst.preorder());
+            console.log("Breadth first", bst.bfs());
 
         });
     </script>
