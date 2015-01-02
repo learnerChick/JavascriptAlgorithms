@@ -80,16 +80,23 @@ define(["Node", "../Queue/Queue.RequireJS"], function(Node, Queue){
         //if node has both children, find the minimum in the right node.
         //Replace the value of node to be removed with found minimum.
         //Since right tree now contains duplicate, remove the duplicate item in the right subtree
+
         else if(node.left !== null && node.right !== null){
             var minNode = this.findMinRecursive(node.right);
             node.element = minNode.element;
             node.right = this.removeMin(node.right);
         }
 
+        else if(node.left === null && node.right === null){
+            node = null;
+            return node;
+        }
+
         //if either node is enmpty, replace the node to be removed with either node
         else{
             node = node.left === null ? node.right : node.left;
         }
+
 
 
         node.count = 1 + this.size(node.left) + this.size(node.right);
@@ -127,6 +134,7 @@ define(["Node", "../Queue/Queue.RequireJS"], function(Node, Queue){
         }
         if(node.left !== null){
             node.left = this.removeMin(node.left);
+            node.count = this.size(node.left) + this.size(node.right) + 1;
             return node;
         }
         else{
