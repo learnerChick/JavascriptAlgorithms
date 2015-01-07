@@ -32,7 +32,15 @@ DoublyLinkedList.prototype.insertAfter = function(element, afterWhich){
 			current.next = node;
 			node.next = oldNext;
 			node.previous = current;
-			oldNext.previous = node;
+
+			//be careful if afterWhich is the tail, skip below
+			if(current !== this.tail){
+				oldNext.previous = node;
+			}
+			else{
+				this.tail = node;
+			}
+
 			return;
 		}
 		current = current.next;
@@ -56,7 +64,7 @@ DoublyLinkedList.prototype.insertLast = function(element){
 DoublyLinkedList.prototype.deleteFirst = function(){
 	if(this.head !== null){
 		var oldHead = this.head;
-		
+
 		if(this.head === this.tail){
 			this.head = this.tail = this.head.next;
 		}
@@ -65,9 +73,9 @@ DoublyLinkedList.prototype.deleteFirst = function(){
 		}
 
 		if(this.head !== null){
-			this.head.previous = null;	
+			this.head.previous = null;
 		}
-		
+
 		return oldHead;
 	}
 	return null;
@@ -84,12 +92,12 @@ DoublyLinkedList.prototype.deleteLast = function(){
 		else{
 			this.tail = oldTail.previous;
 		}
-		
-		
+
+
 		if(this.tail !== null){
 			this.tail.next = null;
 		}
-		
+
 		return oldTail;
 	}
 	else if(this.head !== null){

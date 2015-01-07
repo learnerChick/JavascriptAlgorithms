@@ -36,19 +36,21 @@
             //bst.remove(18);
 
 
-            console.info("Size of BST is: ", bst.getSize());
-            bst.remove(18);
-            console.info("Size of BST is: ", bst.getSize());
-            bst.add(18);
-            console.info("Size of BST is: ", bst.getSize());
-            bst.remove(45);
-            console.info("Size of BST is: ", bst.getSize());
+            console.info("Size of BST is: ", bst.getSize(), bst.getTreeSize());
+            //bst.remove(18);
+            console.info("Size of BST is: ", bst.getSize(), bst.getTreeSize());
+            //bst.add(18);
+            console.info("Size of BST is: ", bst.getSize(), bst.getTreeSize());
+            //bst.remove(45);
+            console.info("Size of BST is: ", bst.getSize(), bst.getTreeSize());
             //console.log(bst.find(3));
             //console.log(bst.remove(3));
             console.info("Inorder: ", bst.inorder());
             console.log("Postorder:" , bst.postorder());
             console.log("Preorder:", bst.preorder());
             console.log("Breadth first", bst.bfs());
+
+
 
         });
     </script>
