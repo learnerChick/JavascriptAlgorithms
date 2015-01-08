@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Binary Search Tree Height</title>
+</head>
+<body>
+<script src="../RequireJS/require.js"></script>
+<script>
+
+    require(["BinarySearchTree", "BSTHeight"], function(BinarySearchTree, getHeight){
+        var bst = new BinarySearchTree();
+        var bst2 = new BinarySearchTree();
+
+        bst.add(18);
+        bst.add(16);
+        bst.add(50);
+        bst.add(14);
+        bst.add(17);
+        bst.add(48);
+        bst.add(80);
+
+
+        bst2.add(18);
+        bst2.add(16);
+        bst2.add(50);
+        bst2.add(14);
+        bst2.add(17);
+        bst2.add(48);
+        bst2.add(80);
+        bst2.add(44);
+        bst2.add(49);
+        bst2.add(27);
+        bst2.add(45);
+
+        console.log(getHeight(bst.root));  //2
+        console.log(getHeight(bst2.root));  //4
+
+
+    });
+</script>
+</body>
+</html>
