@@ -95,8 +95,11 @@ define(["Node", "../Queue/Queue.RequireJS"], function(Node, Queue){
                 node.right.parent = node;
             }
         }
+        else if(node.left === null && node.right === null){
+            node = null;
+        }
 
-        //if either node is enmpty, replace the node to be removed with either node
+        //if either node is empty, replace the node to be removed with either node
         else{
             node = node.left === null ? node.right : node.left;
 
