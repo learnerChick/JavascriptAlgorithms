@@ -11,6 +11,7 @@ define(function(){
             comes after you're done with the left subtree.
             b) the current node is the right child of the parent.  Here, you need to go up the subtree until you hit a parent node that will be next in traversal.
 
+        Efficiency: O(h)
     */
 
     function findSuccessorWithParent(tree, node){
