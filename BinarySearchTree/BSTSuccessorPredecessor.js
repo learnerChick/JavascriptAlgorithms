@@ -1,5 +1,7 @@
-define(["BSTWithParent"], function(BST){
+define(function(){
     /*
+
+        An inorder successor of a binary search tree is the next node in the in order traversal of the binary tree.
         Successor is the next bigger number of the current node, it has to be the smallest of all numbers in the right subtree.
         So, essentially we are looking for the minimum number in the right subtree of the current node.
 
@@ -11,7 +13,7 @@ define(["BSTWithParent"], function(BST){
 
     */
 
-    function findSuccessor(tree, node){
+    function findSuccessorWithParent(tree, node){
         if(node === null){
             return null;
         }
@@ -30,7 +32,60 @@ define(["BSTWithParent"], function(BST){
         return parent;
     }
 
+    function findSuccessor(tree, root, node){
+        if(node === null){
+            return null;
+        }
+        if(node.right !== null){
+            return tree.findMinRecursive(node.right);
+        }
+
+        var succ = null;
+        //start from root and search for successor down the tree
+        while(root !== null){
+            if(node.element < root.element){
+                succ = root;
+                root = root.left;
+            }
+            else if(node.element > root.element){
+                root = root.right;
+            }
+            else{
+                break;
+            }
+        }
+        return succ;
+    }
+
+    //this will be the next smaller item in inorder traversal
+    function findPredecessor(tree, root, node){
+        if(node === null){
+            return null;
+        }
+        if(node.left !== null){
+            return tree.findMaxRecursive(node.left);
+        }
+
+        var succ = null;
+        //start from root and search for successor down the tree
+        while(root !== null){
+            if(node.element < root.element){
+                root = root.left;
+            }
+            else if(node.element > root.element){
+                succ = root;
+                root = root.right;
+            }
+            else{
+                break;
+            }
+        }
+        return succ;
+    }
+
     return {
-        findSuccessor: findSuccessor
+        findSuccessorWithParent: findSuccessorWithParent,
+        findSuccessor: findSuccessor,
+        findPredecessor: findPredecessor
     }
 });

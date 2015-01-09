@@ -8,39 +8,29 @@ define(function() {
     An empty tree is also considered balanced.
     */
 
-        function isBalanced(tree) {
+    function isBalanced(tree) {
         if (checkHeight(tree.root) === -1) {
             return false;
         }
         return true;
     }
 
-    function checkHeight(node) {
-        console.log("Element is ", (node !== null ? node.element : "empty"));
-        if (node === null) {
-            return 0;
+    function checkHeight(node){
+        if(node === null){
+            return -1;
         }
 
-        //recursively check the left node until it hits the condition above.
         var leftHeight = checkHeight(node.left);
-
-        if (leftHeight === -1) {
-            return -1;
-        }
-
         var rightHeight = checkHeight(node.right);
-        if (rightHeight === -1) {
-            return -1
-        }
 
-        if (Math.abs(leftHeight - rightHeight) > 1) {
+        if(Math.abs(leftHeight-rightHeight) > 1){
             return -1;
         }
-        else {
-            return Math.max(leftHeight, rightHeight) + 1;
+        else{
+            return Math.max(leftHeight, rightHeight) + 1
         }
     }
 
-    return isBalanced;
+return isBalanced;
 
 });

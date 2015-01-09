@@ -29,7 +29,6 @@ define(["Node", "../Queue/Queue.RequireJS"], function(Node, Queue){
         }
         else if(item < node.element){
             node.left = this.addRecursive(item, node.left, node);
-
         }
         else if(item > node.element){
             node.right = this.addRecursive(item, node.right, node);

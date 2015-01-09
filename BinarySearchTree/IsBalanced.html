@@ -10,6 +10,7 @@
     require(["BinarySearchTree", "IsBalanced"], function(BinarySearchTree, IsBalanced){
         var bst = new BinarySearchTree();
         var bst2 = new BinarySearchTree();
+        var bst3 = new BinarySearchTree();
 
         bst.add(18);
         bst.add(16);
@@ -32,10 +33,23 @@
         bst2.add(27);
         bst2.add(45);
 
-        var isBalanced = IsBalanced;
-        console.log(isBalanced(bst));
 
-        console.log(isBalanced(bst2));
+        bst3.add(18);
+        bst3.add(16);
+        bst3.add(50);
+        bst3.add(14);
+        bst3.add(17);
+        bst3.add(48);
+        bst3.add(80);
+        bst3.add(44);
+
+
+        var isBalanced = IsBalanced;
+        console.log(isBalanced(bst)); //true
+
+        console.log(isBalanced(bst2)); //false
+
+        console.log(isBalanced(bst3)); //true
 
 
     });
