@@ -1,7 +1,7 @@
 /**
  * Write a function to find the min and max in an array with minimum comparisons.
  * Solution: Compare in pairs
- * If n is odd, then initialize min and max = arr[0]. 
+ * If n is odd, then initialize min and max = arr[0].
  * If n is even, the initialize min = arr[0] and max = arr[1].
  * Then, start going through each element and compare min and max
  * Time complexity: 0(n)
