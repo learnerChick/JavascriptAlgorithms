@@ -5,6 +5,7 @@
 </head>
 <body>
     <script src="LinkedList.js"></script>
+    <script src="NthFromLast.js"></script>
     <script>
         var linkedList = new LinkedList();
         linkedList.insertFirst("10");
@@ -18,41 +19,9 @@
         linkedList.insertFirst("10");
         linkedList.insertFirst("8");
 
-        function printNthFromLast(linkedList, n){
-            /*
-            Maintain two pointers – reference pointer and main pointer.
-            Initialize both reference and main pointers to head.
-            First move reference pointer to n nodes from head.
-            Now move both pointers one by one until reference pointer reaches end.
-            Now main pointer will point to nth node from the end. Return main pointer.
-            */
+        console.log(nthFromLast(linkedList, 7)); //7
 
-            var mainPtr = linkedList.head;
-            var referencePtr = linkedList.head;
-            var head = linkedList.head;
-            var count = 0;
-
-            if(head !== null){
-                while(count < n){
-                    if(referencePtr === null){
-                        return;
-                    }
-                    referencePtr = referencePtr.next;
-                    count++;
-                }
-
-                while(referencePtr !== null){
-                    mainPtr = mainPtr.next;
-                    referencePtr = referencePtr.next;
-                }
-
-                console.log("Pointer from ", n, "is", mainPtr.element);
-            }
-
-        }
-
-        printNthFromLast(linkedList, 7);
-        printNthFromLast(linkedList, 3);
+        console.log(nthFromLast(linkedList, 3)); //4
     </script>
 </body>
 </html>
