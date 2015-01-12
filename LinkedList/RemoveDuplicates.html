@@ -6,10 +6,10 @@
     <title>Write code to remove duplicates from an unsorted linked list.</title>
 </head>
 <body>
-    <script src="LinkedList.js"></script>
-    <script>
-        function method1(){
-            var linkedList = new LinkedList();
+    <script src="../RequireJS/require.js"></script>
+<script>
+    require(["RemoveDuplicates", "LinkedList.RequireJS"], function(RemoveDuplicates, LinkedList){
+        var linkedList = new LinkedList();
             linkedList.insertFirst(1);
             linkedList.insertFirst(2);
             linkedList.insertFirst(4);
@@ -18,54 +18,10 @@
             linkedList.insertFirst(3);
             linkedList.insertFirst(1);
 
-            var current = linkedList.head;
-            var newLinkedList = new LinkedList();
-            newLinkedList.insertFirst(current.element);
+        console.log(RemoveDuplicates.removeDuplicatesWithExtraSpace(linkedList));
+        console.log(RemoveDuplicates.removeDuplicatesWithNoExtraSpace(linkedList));
 
-            while(current.next !== null){
-                current = current.next;
-                if(!newLinkedList.find(current.element)){
-                    newLinkedList.insertFirst(current.element);
-                }
-            }
-
-            console.info(newLinkedList);
-        }
-
-        method1();
-
-        function method2(){
-            /* method2 removes duplicates without using any extra space */
-            var linkedList = new LinkedList();
-            linkedList.insertFirst(1);
-            linkedList.insertFirst(2);
-            linkedList.insertFirst(4);
-            linkedList.insertFirst(1);
-            linkedList.insertFirst(2);
-            linkedList.insertFirst(3);
-            linkedList.insertFirst(1);
-
-            var current = linkedList.head;
-            /* start the while loop at the current head */
-            while(current !== null){
-                /* set the previous and next elements */
-                var next = current.next;
-                var previous = current;
-                while(next !== null){
-                    if(next.element === current.element){
-                        /* if there is a match, the previous's next is set to the next.next */
-                        previous.next = next.next;
-                    }
-                    previous = next;
-                    next = next.next;
-                }
-                current = current.next;
-            }
-            console.info(linkedList);
-        }
-
-        method2();
-
+    });
     </script>
 </body>
 </html>
