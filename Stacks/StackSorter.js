@@ -15,7 +15,7 @@ StackSorter.prototype.sort = function(){
     while(!this.stack.isEmpty()){
         var popped = this.stack.pop();
 
-        while(!s2.isEmpty() && s2.peek() < popped){
+        while(!s2.isEmpty() && s2.peek() > popped){
             this.stack.push(s2.pop());
         }
         s2.push(popped);
