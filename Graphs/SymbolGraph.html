@@ -17,6 +17,17 @@
             graph.showGraph();
             graph.dfs(0);
             //graph.bfs(0);
+
+
+            var graph2 = new DirectedGraph(10);
+            graph2.addEdge("Amy", "Baba");
+            graph2.addEdge("Amy", "Caitlin");
+            graph2.addEdge("Caitlin", "Methuselah");
+            graph2.addEdge("Methuselah", "Phineas");
+
+            graph2.showGraph();
+            //graph2.dfs(0);
+            graph2.bfs(0);
         });
     </script>
 </body>
