@@ -14,6 +14,7 @@
         trie.add("apply");
         trie.add("applied");
         trie.add("ding");
+        trie.remove("app");
         console.log(trie.getTree());
         console.log(trie.find("app"), "finding app");
         console.log(trie.find("ding"), "finding ding");
@@ -24,6 +25,13 @@
         console.log(trie.getWordsWithPrefix("s"));
         console.log(trie.getWordsWithPrefix("apl"));
         console.log(trie.getWordsWithPrefix(""));
+
+
+        var trie2 = new Trie();
+        trie2.add("home");
+        trie2.remove("home");
+        console.log(trie2.getTree());
+
     });
 </script>
 </body>

@@ -95,6 +95,11 @@ define(function(){
     }
 
     function canRemove(word, index, node){
+        /* since this is a recursive function, when we return true if there
+            aren't any children, it will delete each character node in entirety
+            in the else loop.  In the first if loop, it will delete the $ character
+            and progressively delete the characters.
+        */
         if(index === word.length - 1){
             //last letter
             this.count--;

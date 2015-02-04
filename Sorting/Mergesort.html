@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Mergesort</title>
+</head>
+<body>
+  <script>
+/**
+
+*/
+
+function mergesort(items){
+  if(items.length <= 1){
+    return items;
+  }
+
+  var left = [],
+    right = [],
+    result = [];
+
+  var mid = Math.floor(items.length/2);
+  left = items.slice(0, mid);
+  right = items.slice(mid);
+
+  left = mergesort(left);
+  right = mergesort(right);
+  result =  merge(left, right);
+
+  return result;
+
+}
+
+function merge(left, right){
+  var result = [];
+
+  while(left.length > 0 && right.length > 0){
+    if(left[0] < right[0]){
+      result.push(left.shift());
+    }
+    else{
+      result.push(right.shift());
+    }
+  }
+
+  if(right.length !== 0){
+    result = result.concat(right);
+  }
+
+  if(left.length !== 0){
+    result = result.concat(left);
+  }
+
+  return result;
+}
+
+items = [77,99,44,55,22,88,11,00,66,33];
+console.log(mergesort(items));
+
+</script>
+</body>
+</html>
