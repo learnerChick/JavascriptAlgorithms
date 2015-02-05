@@ -13,8 +13,8 @@ function reverseWords(str){
             reversedStr = reversedStr + str.substring(i+1, end) + " ";
             end = i;
         }
-
     }
-    reversedStr = reversedStr + str.substring(i + 1, end);
+    //reversedStr = reversedStr + str.substring(i + 1, end);
+    reversedStr += str.substring(0, end);
     console.log(reversedStr);
 }
