@@ -35,8 +35,29 @@ define(["LinkedList.RequireJS"], function(LinkedList){
     return list;
   }
 
+  function removeDuplicatesWithNoExtraSpace2(list){
+      var current = list.head;
+
+      while(current !== null){
+        var next = current.next;
+
+        while(next !== null){
+          if(next.element === current.element){
+            next.element = next.next.element;
+          }
+          next = next.next;
+        }
+        current = current.next;
+      }
+
+      return list;
+    }
+
+
   return {
     removeDuplicatesWithExtraSpace: removeDuplicatesWithExtraSpace,
-    removeDuplicatesWithNoExtraSpace: removeDuplicatesWithNoExtraSpace
+    removeDuplicatesWithNoExtraSpace: removeDuplicatesWithNoExtraSpace,
+    removeDuplicatesWithNoExtraSpace2: removeDuplicatesWithNoExtraSpace2
+
   }
 });
