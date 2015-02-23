@@ -14,18 +14,17 @@ function permutations(str){
 
 
 function permute(prefix, str){
-    console.log("prefix: ", prefix, " str:", str);
     var len = str.length;
     if(len === 0){
-        console.info(prefix);
-
+        console.info(prefix, " final");
     }
     else{
         for(var i = 0; i < len; i++){
-
-            var newString = str.substring(0, i) + str.substring(i+1, len);
-            console.log(i, newString, prefix + str.charAt(i));
-            permute(prefix + str.charAt(i), newString);
+            var before = str.substring(0, i);
+            var after = str.substring(i+1);
+            var current = str[i];
+            console.log(prefix+current, before+after);
+            permute(prefix + current, before + after);
         }
     }
 }
