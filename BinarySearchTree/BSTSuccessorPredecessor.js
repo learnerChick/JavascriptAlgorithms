@@ -12,6 +12,11 @@ define(function(){
             b) the current node is the right child of the parent.  Here, you need to go up the subtree until you hit a parent node that will be next in traversal.
 
         Efficiency: O(h)
+
+
+     1. If there is a right child of the given node. In this case the smallest element in the right sub tree would be the inorder successor.
+     2. If it does not have a left child a nodes predecessor is its first left ancestor
+
     */
 
     function findSuccessorWithParent(tree, node){
