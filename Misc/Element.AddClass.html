@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Add Class</title>
+</head>
+<body>
+<script>
+    if(!Element.prototype.addClass){
+        Element.prototype.addClass = function(c){
+            if(this.className.split(" ").indexOf(c) === -1){
+                this.className = this.className + "  " + c;
+            }
+        }
+    }
+
+    var test = document.getElementById("test");
+    test.addClass("me");
+
+    var test2 = document.getElementById("test2");
+    test2.addClass("me2");
+    test2.addClass("me7");
+
+    var test3 = document.getElementById("test3");
+    test3.addClass("me3");
+    test3.addClass("me5");
+
+</script>
+</body>
+</html>
+

@@ -10,7 +10,7 @@ function nthFromLast(linkedList, n){
   var referencePointer = linkedList.head,
     mainPointer = linkedList.head,
     counter = 0;
-
+    /*
     while(referencePointer !== null && counter < n){
       if(referencePointer.next === null){
         return;
@@ -27,7 +27,24 @@ function nthFromLast(linkedList, n){
     }
 
     return mainPointer.element
+    */
 
+    while(counter < n){
+        if(referencePointer !== null){
+            referencePointer = referencePointer.next;
+            counter++;
+        }
+        else{
+            return null;
+        }
+    }
+
+    while(referencePointer !== null){
+        referencePointer = referencePointer.next;
+        mainPointer = mainPointer.next;
+    }
+
+    return mainPointer;
     //we have reached the end, return the mainPointer
 
 

@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Implement an algorithm to find the nth to last element of a singly linked list.</title>
+</head>
+<body>
+<script>
+function deepEqual(obj1, obj2){
+  var o1Props = Object.getOwnPropertyNames(obj1);
+  var o2Props = Object.getOwnPropertyNames(obj2);
+
+  if(o1Props.length !== o2Props.length){
+    return false;
+  }
+
+  for(i in o1Props){
+    var prop = o1Props[i];
+    if(!isObject(obj1[prop])){
+      if(obj1[prop] !== obj2[prop]){
+        return false;
+      }
+    }
+    else{
+      return deepEqual(obj1[prop], obj2[prop]);
+    }
+  }
+  return true;
+}
+
+
+function isObject(item){
+  return typeof item === 'object';
+
+}
+
+var obj = {here: {is: "an"}, object: 2};
+var obj2 = {here: {is: "an"}, object: 2};
+
+console.log(deepEqual(obj, obj));
+// → true
+console.log(deepEqual(obj, {here: 1, object: 2}));
+// → false
+console.log(deepEqual(obj, {here: {is: "an"}, object: 2}));
+// → true
+
+console.log(deepEqual(obj, {here: {is: "an2"}, object: 2}));
+//> false
+
+console.log(deepEqual(obj, {here: {is2: "an"}, object: 2}));
+//> false
+
+
+console.log(deepEqual(obj, obj2));
+//> true
+
+
+
+var jangoFett = {
+    occupation: "Bounty Hunter",
+    genetics: "superb",
+    b: "t",
+    c: {
+        a: "me"
+    }
+};
+
+var bobaFett = {
+    occupation: "Bounty Hunter",
+    genetics: "superb",
+    b: "t",
+    c: {
+        a: "me"
+    }
+};
+
+console.log(deepEqual(bobaFett, jangoFett));
+  </script>
+
+</body>
+</html>
+

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Is Descendent</title>
+</head>
+
+<body>
+<div id="container">
+    <div id="first">
+        <div id="second">
+
+        </div>
+
+    </div>
+    <div id="third">
+        <div id="five"></div>
+    </div>
+    <div id="four"></div>
+</div>
+<script>
+    function isDescendent(parent, child){
+        if(child === null || parent === null){
+            return false;
+        }
+
+        if(parent === child){
+            return false;
+        }
+
+        var current = child;
+        while(current !== null && current.parentNode !== null){
+            if(current.parentNode === parent){
+                console.log("true");
+                return true;
+            }
+            else{
+                current = current.parentNode;
+            }
+        }
+        console.log("false");
+        return false;
+    }
+
+    var container = document.getElementById("container");
+    var first =  document.getElementById("first");
+
+    var five = document.getElementById("five");
+    var four =  document.getElementById("four");
+
+     var second = document.getElementById("second");
+
+
+    isDescendent(container, first);
+    isDescendent(four, five);
+    isDescendent(container, second);
+    console.log(isDescendent(container, container));
+
+</script>
+</body>
+</html>

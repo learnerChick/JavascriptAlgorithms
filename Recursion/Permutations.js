@@ -14,8 +14,7 @@ function permutations(str){
 
 
 function permute(prefix, str){
-    var len = str.length;
-    if(len === 0){
+    if(str.length === 0){
         console.info(prefix, " final");
     }
     else{

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Read JSON</title>
+</head>
+<body>
+<script>
+   //go through JSON string
+    var session = [];
+    session.push({ 'name': 'screenA', 'width': 450, 'height': 250 });
+    session.push({ 'name': 'screenB', 'width': 650, 'height': 350 });
+    session.push({ 'name': 'screenC', 'width': 750, 'height': 120 });
+    session.push({ 'name': 'screenD', 'width': 250, 'height': 60 });
+    session.push({ 'name': 'screenE', 'width': 390, 'height': 120 });
+    session.push({ 'name': 'screenF', 'width': 1240, 'height': 650 })
+
+    console.log(JSON.stringify(session));
+
+
+    var sess = JSON.parse(JSON.stringify(session));
+    var collected = [];
+
+    session.forEach(function(obj){
+      collected.push(obj.width);
+    });
+
+    collected = collected.sort(function(a, b){ return a-b });
+    console.log(collected);
+
+</script>
+</body>
+</html>
